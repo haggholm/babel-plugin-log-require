@@ -8,7 +8,7 @@
   "license": "MIT",
   "main": "dist/babel-plugin-log-require.js",
   "description": "Babel plugin that inserts `console.log` messages at the top and bottom of each module in order to track runtime import behaviour.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": {
     "type": "git",
     "url": "git@github.com:haggholm/babel-plugin-log-require.git"
