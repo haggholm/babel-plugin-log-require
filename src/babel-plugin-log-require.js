@@ -12,7 +12,7 @@ export default declare((api) => {
 					return;
 				}
 
-				const varName = this.scope.generateUidIdentifier(name);
+				const varName = path.scope.generateUidIdentifier('logRequireTimestamp');
 
 				filename = filename.replace(/(?:.*node_modules\/)(.+)$/, '$1');
 
@@ -31,7 +31,7 @@ export default declare((api) => {
 					t.variableDeclaration(
 						'const',
 						[t.variableDeclarator(
-							t.identifier(varName),
+							varName,
 							t.callExpression(t.memberExpression(t.identifier('Date'), t.identifier('now')), [])
 						)]
 					)
@@ -50,7 +50,7 @@ export default declare((api) => {
 								// t1 - t0
 								t.binaryExpression('-',
 									t.callExpression(t.memberExpression(t.identifier('Date'), t.identifier('now')), []),
-									t.identifier(varName)
+									varName
 								),
 								t.stringLiteral('ms')
 							]
